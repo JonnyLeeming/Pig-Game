@@ -64,6 +64,10 @@ btnRoll.addEventListener('click', function () {
     if (dice1 == 1 || dice2 == 1) {
       //Switch to next player
       switchPlayer();
+    } else if (dice1 == 6 && dice2 == 6) {
+      currentScore += dice1 + dice2;
+      document.getElementById(`score--${activePlayer}`).textContent = 0;
+      switchPlayer();
     } else {
       //Add dice to current score
       currentScore += dice1 + dice2;
